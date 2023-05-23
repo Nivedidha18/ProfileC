@@ -1,6 +1,7 @@
 const buttons = document.querySelectorAll('.card-buttons button');
 const sections = document.querySelectorAll('.card-section');
 const card = document.querySelector('.card');
+const workTogetherButton = document.querySelector('.contact-me');
 
 const handleButtonClick = (e) => {
   const targetSection = e.target.getAttribute('data-section');
@@ -17,4 +18,16 @@ const handleButtonClick = (e) => {
 
 buttons.forEach((btn) => {
   btn.addEventListener('click', handleButtonClick);
+});
+
+workTogetherButton.addEventListener('click', () => {
+  const emailAddress = 'nivedidhakumar@yahoo.com';
+  const subject = 'Work Together';
+  const body = "Hello, let's work together on a project.";
+
+  const mailtoLink = `mailto:${emailAddress}?subject=${encodeURIComponent(
+    subject
+  )}&body=${encodeURIComponent(body)}`;
+
+  window.location.href = mailtoLink;
 });
